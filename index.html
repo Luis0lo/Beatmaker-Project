@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="./assets/style.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
     <title>Beatmaker</title>
   </head>
 
@@ -16,11 +16,9 @@
             <i class="fas fa-volume-mute"></i>
           </button>
           <select name="kick-select" id="kick-select">
-            <option value="assets/allSounds/kick-classic.wav"
-              >Classic Kick</option
-            >
-            <option value="assets/allSounds/kick-808.wav">808 Kick</option>
-            <option value="assets/allSounds/kick-heavy.wav">Kick Heavy</option>
+            <option value="allSounds/kick-classic.wav">Classic Kick</option>
+            <option value="allSounds/kick-808.wav">808 Kick</option>
+            <option value="allSounds/kick-heavy.wav">Kick Heavy</option>
           </select>
         </div>
         <div class="kick">
@@ -41,13 +39,11 @@
             <i class="fas fa-volume-mute"></i>
           </button>
           <select name="snare-select" id="snare-select">
-            <option value="assets/allSounds/snare-acoustic01.wav"
+            <option value="allSounds/snare-acoustic01.wav"
               >Classic snare</option
             >
-            <option value="assets/allSounds/snare-808.wav">808 Snare</option>
-            <option value="assets/allSounds/snare-vinyl02.wav"
-              >Snare Vinyl</option
-            >
+            <option value="allSounds/snare-808.wav">808 Snare</option>
+            <option value="allSounds/snare-vinyl02.wav">Snare Vinyl</option>
           </select>
         </div>
         <div class="snare">
@@ -68,10 +64,8 @@
             <i class="fas fa-volume-mute"></i>
           </button>
           <select name="hihat-select" id="hihat-select">
-            <option value="assets/allSounds/hihat-acoustic.wav"
-              >Hihat Coustic</option
-            >
-            <option value="assets/allSounds/hihat-808.wav">808 Hihat</option>
+            <option value="allSounds/hihat-acoustic.wav">Hihat Coustic</option>
+            <option value="allSounds/hihat-808.wav">808 Hihat</option>
           </select>
         </div>
         <div class="hihat">
@@ -88,15 +82,9 @@
       <button class="play">Play</button>
     </div>
 
-    <audio class="kick-sound" src="assets/allSounds/kick-classic.wav"></audio>
-    <audio
-      class="snare-sound"
-      src="assets/allSounds/snare-acoustic01.wav"
-    ></audio>
-    <audio
-      class="hihat-sound"
-      src="assets/allSounds/hihat-acoustic01.wav"
-    ></audio>
+    <audio class="kick-sound" src="allSounds/kick-classic.wav"></audio>
+    <audio class="snare-sound" src="allSounds/snare-acoustic01.wav"></audio>
+    <audio class="hihat-sound" src="allSounds/hihat-acoustic01.wav"></audio>
 
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"
