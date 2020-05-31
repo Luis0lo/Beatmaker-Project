@@ -12,6 +12,8 @@ class DrumKit {
     this.bpm = 150;
     this.isPlaying = null;
     this.selects = document.querySelectorAll("select");
+    this.muteBtns = document.querySelectorAll(".mute");
+    this.tempoSlider = document.querySelector(".tempo-slider");
   }
 
   activePad() {
@@ -80,6 +82,48 @@ class DrumKit {
         break;
     }
   }
+  mute(e) {
+    const muteIndex = e.target.getAttribute("data-track");
+    e.target.classList.toggle("active");
+    if (e.target.classList.contains("active")) {
+      switch (muteIndex) {
+        case "0":
+          this.kickAudio.volume = 0;
+          break;
+        case "1":
+          this.snareAudio.volume = 0;
+          break;
+        case "2":
+          this.hihatAudio.volume = 0;
+          break;
+      }
+    } else {
+      switch (muteIndex) {
+        case "0":
+          this.kickAudio.volume = 1;
+          break;
+        case "1":
+          this.snareAudio.volume = 1;
+          break;
+        case "2":
+          this.hihatAudio.volume = 1;
+          break;
+      }
+    }
+  }
+  changeTempo(e) {
+    const tempoText = document.querySelector(".tempo-nr");
+    tempoText.innerText = e.target.value;
+  }
+  updateTempo(e) {
+    this.bpm = e.target.value;
+    clearInterval(this.isPlaying);
+    this.isPlaying = null;
+    const playBtn = document.querySelector(".play");
+    if (playBtn.classList.contains("active")) {
+      this.start();
+    }
+  }
 }
 
 const drumKit = new DrumKit();
@@ -102,4 +146,18 @@ drumKit.selects.forEach((select) => {
   select.addEventListener("change", function (e) {
     drumKit.changeSound(e);
   });
+});
+////////////////////////////////////////////////Mute the song
+drumKit.muteBtns.forEach((btn) => {
+  btn.addEventListener("click", function (e) {
+    drumKit.mute(e);
+  });
+});
+////////////////////////////////////////////////Select bpm
+drumKit.tempoSlider.addEventListener("input", function (e) {
+  drumKit.changeTempo(e);
+});
+////////////////////////////////////////////////update while playing
+drumKit.tempoSlider.addEventListener("change", function (e) {
+  drumKit.updateTempo(e);
 });
