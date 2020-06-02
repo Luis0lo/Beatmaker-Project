@@ -5,10 +5,19 @@
 }
 body {
   font-family: sans-serif;
+  background: rgb(37, 37, 99);
+  color: white;
 }
 i,
 svg {
   pointer-events: none;
+}
+.head {
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  font-size: 3rem;
+  font-weight: lighter;
+  letter-spacing: 0.2rem;
 }
 .kick-pad,
 .snare-pad,
@@ -20,22 +29,25 @@ svg {
 }
 
 .kick-pad {
-  background: rgb(108, 158, 252);
+  background: rgb(250, 244, 186);
 }
 .snare-pad {
-  background: rgb(136, 250, 132);
+  background: rgb(160, 219, 158);
 }
 .hihat-pad {
   background: rgb(250, 171, 175);
 }
 .kick-pad.active {
-  background: rgb(20, 101, 252);
+  background: rgb(187, 168, 2);
+  border-radius: 1rem;
 }
 .snare-pad.active {
-  background: rgb(23, 250, 15);
+  background: rgb(45, 224, 39);
+  border-radius: 1rem;
 }
 .hihat-pad.active {
   background: rgb(250, 63, 73);
+  border-radius: 1rem;
 }
 
 .sequencer {
@@ -52,7 +64,7 @@ svg {
   align-items: center;
   width: 90%;
   justify-content: space-between;
-  margin-top: 5rem;
+  margin-top: 2.5rem;
 }
 .kick,
 .snare,
@@ -74,6 +86,7 @@ svg {
   font-size: 1rem;
   cursor: pointer;
   transition: all 0.5s ease;
+  border-radius: 20%;
 }
 .pad {
   transition: all 0.5s ease;
@@ -86,6 +99,7 @@ svg {
   border: none;
   cursor: pointer;
   margin-top: 3rem;
+  border-radius: 5%;
 }
 select {
   padding: 0.5rem;
@@ -106,7 +120,7 @@ select {
   position: relative;
   background: rgb(88, 88, 88);
   cursor: pointer;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
 }
 .tempo p {
   font-size: 1.5rem;
